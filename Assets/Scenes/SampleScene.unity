@@ -645,8 +645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: 1
-  a: 1
-  b: -1
+  a: -1
+  b: 1
   c: -5
   Aposition: {x: 0, y: 0, z: 0}
   Bposition: {x: 0, y: 0, z: 0}
