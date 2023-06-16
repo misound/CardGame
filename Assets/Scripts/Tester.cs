@@ -73,21 +73,31 @@ public class Tester : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDr
         {
             return;
         }
+        
         if (eventData.pointerEnter == null)  //判定是否為空場地
         {
             poolnull = true;
             nullimage.SetActive(poolnull);
+            Debug.Log(poolnull);
         }
-        else if (eventData.pointerEnter == stagepool) //判定是否為丟牌場地 //目前無效果
+        else
         {
-            canvasGroup.blocksRaycasts = true;
-            canvasGroup.alpha = 1f;
+            if (eventData.pointerEnter == GameObject.Find("UseCardBlock"))
+            {
+                canvasGroup.blocksRaycasts = true;
+                canvasGroup.alpha = 1f;
+                Debug.Log(poolnull);
+            }
+
+            if (eventData.pointerEnter == HandCard)
+            {
+                poolnull = true;
+                nullimage.SetActive(poolnull);
+                Debug.Log(poolnull);
+            }
+            Debug.Log(eventData.pointerEnter);
         }
-        else if (eventData.pointerEnter == HandCard)  //判定是否為空場地
-        {
-            poolnull = true;
-            nullimage.SetActive(poolnull);
-        }
+
         
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;

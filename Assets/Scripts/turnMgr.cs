@@ -40,8 +40,8 @@ public class turnMgr : MonoBehaviour
         bRelCenter = Bposition - center;
         for (int i = 1; i < cards + 1; i++)
         {
-            GameObject temp = Instantiate(card);
-            temp.transform.position = Vector3.Slerp(aRelCenter, bRelCenter, i * (1f / (cards + 1)));
+            GameObject temp = Instantiate(card,pool.transform);
+            temp.transform.position = Camera.main.WorldToScreenPoint(Vector3.Slerp(aRelCenter, bRelCenter, i * (1f / (cards + 1))));
             //temp.transform.position -= new Vector3(0f, temp.transform.position.y + c,0f);
             temp.transform.localEulerAngles = new Vector3(0f, 0f,
                 SideEulerAngles - ((2 * SideEulerAngles) * (i * (1f / (cards + 1)))));

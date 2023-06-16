@@ -38,8 +38,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 213, y: 310}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7097354675182250576
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9369ac700f9e26c4f95f1f0e6d05e5c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  poolnull: 0
   nullimage: {fileID: 7097354675692223039}
   stagepool: {fileID: 8334670783482234017, guid: 04cdd85b9baf83a4bbcf199362adebc2, type: 3}
   HandCard: {fileID: 8301277126598555948, guid: 267464da018def9448f853b952746ec8, type: 3}

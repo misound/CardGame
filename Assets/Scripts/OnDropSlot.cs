@@ -28,7 +28,6 @@ public class OnDropSlot : MonoBehaviour, IDropHandler
             {
                 eventData.pointerDrag.transform.SetParent(pool.transform);
             }
-
         }
     }
 }
