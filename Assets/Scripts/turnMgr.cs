@@ -22,9 +22,7 @@ public class turnMgr : MonoBehaviour
     public GameObject pool;
 
     public int cards;
-
     public Vector3 aRelCenter;
-
     public Vector3 bRelCenter;
 
     // Start is called before the first frame update
@@ -40,13 +38,15 @@ public class turnMgr : MonoBehaviour
         bRelCenter = Bposition - center;
         for (int i = 1; i < cards + 1; i++)
         {
-            GameObject temp = Instantiate(card,pool.transform);
-            temp.transform.position = Camera.main.WorldToScreenPoint(Vector3.Slerp(aRelCenter, bRelCenter, i * (1f / (cards + 1))));
-            //temp.transform.position -= new Vector3(0f, temp.transform.position.y + c,0f);
+            GameObject temp = Instantiate(card, pool.transform);
+            temp.transform.position =
+                Camera.main.WorldToScreenPoint(Vector3.Slerp(aRelCenter, bRelCenter, i * (1f / (cards + 1))));
+            //temp.transform.position -= new Vector3(0f, temp.transform.position.y + (c * i),0f);
             temp.transform.localEulerAngles = new Vector3(0f, 0f,
                 SideEulerAngles - ((2 * SideEulerAngles) * (i * (1f / (cards + 1)))));
         }
     }
+
 
     void Update()
     {

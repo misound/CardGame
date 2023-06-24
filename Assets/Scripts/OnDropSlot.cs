@@ -22,6 +22,7 @@ public class OnDropSlot : MonoBehaviour, IDropHandler
         {
             return;
         }
+
         if (eventData.pointerDrag != null) //轉移子物件
         {
             if (eventData.pointerDrag.GetComponent<Tester>() != null)
