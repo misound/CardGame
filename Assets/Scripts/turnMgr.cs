@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,6 +45,7 @@ public class turnMgr : MonoBehaviour
             //temp.transform.position -= new Vector3(0f, temp.transform.position.y + (c * i),0f);
             temp.transform.localEulerAngles = new Vector3(0f, 0f,
                 SideEulerAngles - ((2 * SideEulerAngles) * (i * (1f / (cards + 1)))));
+                //temp.transform.localRotation = quaternion.LookRotationSafe(Vector3.forward, math.lerp(Vector3.up, 2,Time.deltaTime*3));
         }
     }
 

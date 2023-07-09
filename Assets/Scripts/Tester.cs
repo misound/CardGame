@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -51,6 +52,8 @@ public class Tester : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
                 poolnull = false;
                 nullimage.SetActive(poolnull);
             }
+            
+            
         }
 
         if (startAct) //滑鼠移至卡牌上放大
@@ -63,6 +66,8 @@ public class Tester : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
                 transform.localEulerAngles = Vector3.zero;
             }
         }
+        
+        //transform.localRotation = quaternion.LookRotationSafe(Vector3.forward, math.lerp(Vector3.up, 2,Time.deltaTime*3));
     }
 
 

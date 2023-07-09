@@ -53,6 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Tester.cs" />
+     <Compile Include="Assets\Scripts\exercise\Practise.cs" />
      <Compile Include="Assets\Scripts\OnDropSlot.cs" />
      <Compile Include="Assets\Scripts\turnMgr.cs" />
  <Reference Include="UnityEngine">
