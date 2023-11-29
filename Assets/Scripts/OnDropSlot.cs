@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class OnDropSlot : MonoBehaviour, IDropHandler
 {
     public GameObject pool;
-    public Tester tester;
     private turnMgr _turnMgr;
 
     private void Awake()
@@ -25,10 +24,15 @@ public class OnDropSlot : MonoBehaviour, IDropHandler
 
         if (eventData.pointerDrag != null) //轉移子物件
         {
+            //放置的物件與此物件對齊
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+
+
             if (eventData.pointerDrag.GetComponent<Tester>() != null)
             {
                 eventData.pointerDrag.transform.SetParent(pool.transform);
             }
         }
+
     }
 }

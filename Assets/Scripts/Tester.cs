@@ -128,16 +128,22 @@ public class Tester : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
 
             if (eventData.pointerEnter == GameObject.Find("HandCardBlock"))
             {
-                poolnull = true;
+                poolnull = true; //無效區域
                 nullimage.SetActive(poolnull);
                 transform.SetParent(parents.transform);
             }
 
             if (eventData.pointerEnter.GetComponent<Tester>())
             {
-                poolnull = true;
+                poolnull = true; //無效區域
                 nullimage.SetActive(poolnull);
                 transform.SetParent(parents.transform);
+            }
+
+            if(eventData.pointerEnter == GameObject.Find("SetBlock"))
+            {
+                canvasGroup.blocksRaycasts = true;
+                canvasGroup.alpha = 1f;
             }
 
             Debug.Log(eventData.pointerEnter);
