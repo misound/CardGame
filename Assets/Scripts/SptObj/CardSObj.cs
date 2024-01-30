@@ -16,6 +16,10 @@ public class CardSObj : ScriptableObject
 
     private void Awake()
     {
-        Debug.Log($"我是{_id}號卡牌");
+        Debug.Log($"我是{100 + _id}號卡牌");
+    }
+    private void OnEnable()
+    {
+        Debug.Log($"我是{100 + _id}號卡牌");
     }
 }

@@ -41,11 +41,11 @@ public class fengpeitest : MonoBehaviour
         Card[] dis = FindObjectsOfType<Card>();
         Cards.AddRange(dis.ToList());
 
-        System.Random rand = new System.Random();
+        
         //符合列表資訊
         for (int i = 0; i < Cards.Count; i++)
         {
-            Cards[i].CardSobj = CardSobj[rand.Next(CardSobj.Count)]; //todo:解決重複數字
+            Cards[i].CardSobj = CardSobj[GameDB.rand.Next(CardSobj.Count)]; //todo:解決重複數字
         }
         GameDB.LettersList = CardSobj;
     }

@@ -52,8 +52,6 @@ public class Tester : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEn
                 poolnull = false;
                 nullimage.SetActive(poolnull);
             }
-            
-            
         }
 
         if (startAct) //滑鼠移至卡牌上放大

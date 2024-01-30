@@ -43,6 +43,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6305895430241472374}
     m_Modifications:
+    - target: {fileID: 1454632993267297948, guid: 1cfccf8694354384a9bc06d572937d44, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.80000305
+      objectReference: {fileID: 0}
     - target: {fileID: 5129486628155712082, guid: 1cfccf8694354384a9bc06d572937d44, type: 3}
       propertyPath: m_Name
       value: WhiteCard

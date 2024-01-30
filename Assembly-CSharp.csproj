@@ -54,20 +54,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Tester.cs" />
+    <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\exercise\Practise.cs" />
+    <Compile Include="Assets\Scripts\DialogueMgr.cs" />
     <Compile Include="Assets\Scripts\GameDB.cs" />
     <Compile Include="Assets\Scripts\SptObj\CardSObj.cs" />
     <Compile Include="Assets\Scripts\ClassStudy\ClassMgr.cs" />
     <Compile Include="Assets\Scripts\ClassStudy\Player.cs" />
+    <Compile Include="Assets\Scripts\CardMgr.cs" />
     <Compile Include="Assets\Scripts\ClassStudy\Monster.cs" />
     <Compile Include="Assets\Scripts\OnDropSlot.cs" />
     <Compile Include="Assets\Scripts\ClassStudy\Ceature.cs" />
     <Compile Include="Assets\Scripts\SptObj\Card.cs" />
+    <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\turnMgr.cs" />
     <Compile Include="Assets\Scripts\SptObj\fengpeitest.cs" />
-    <Compile Include="Assets\Scripts\DialogueMgr.cs" />
-    <Compile Include="Assets\Scripts\Dialogue.cs" />
-    <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\SptObj\CardObjBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
