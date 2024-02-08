@@ -5,7 +5,6 @@ using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class turnMgr : MonoBehaviour
 {
@@ -26,11 +25,11 @@ public class turnMgr : MonoBehaviour
     [Tooltip("Card trans parents")]
     [SerializeField] private GameObject _pool;
     [Tooltip("Card amount")]
-    [SerializeField] private int cards;
-    [SerializeField] private int handCards;
+    [SerializeField] public int cards;
+    [SerializeField] public int handCards;
 
     [Header("Scanner")]
-    [SerializeField] private UnityEngine.UI.Button _button;
+    [SerializeField] private Button _button;
     [SerializeField] private List<Card> _cards;
     [SerializeField] private List<Card> _deck;
     [SerializeField] private List<GameObject> cardParent;
@@ -38,6 +37,7 @@ public class turnMgr : MonoBehaviour
     [SerializeField] private List<CardSObj> cardSObjs;
     [SerializeField] private CardObjBase cardObjBase;
 
+    public int Dmg = 1;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class turnMgr : MonoBehaviour
     }
     void Update()
     {
-            
+
     }
     #region 手牌角度
     /// <summary>
@@ -98,7 +98,7 @@ public class turnMgr : MonoBehaviour
     /// <param name="CardAmount">牌組數目</param>
     void DeckIns(int CardAmount)
     {
-        for(int i = 0; i < CardAmount; i++)
+        for (int i = 0; i < CardAmount; i++)
         {
             GameObject temp = Instantiate(_cardparent, _pool.transform);
             _deck.Add(temp.transform.GetChild(0).GetComponent<Card>());
@@ -112,16 +112,19 @@ public class turnMgr : MonoBehaviour
     /// 手牌排序
     /// </summary>
     /// <param name="handcard">手牌張數</param>
-    void HandCard(int handcard)
+    public void HandCard(int handcard)
     {
-        
         //從三點來做手牌的範圍
         //最左邊
         Aposition = new Vector2(-Sides, Height);
         ///最右邊
         Bposition = new Vector2(Sides, Height);
+        if (handcard < 0)
+            return;
         //複製牌組資訊
         HandcardParent = cardParent.GetRange(0, handcard);
+        if (handcard < 2)
+            return;
         for (int i = 0; i < handcard; i++)
         {
             HandcardParent[i].gameObject.SetActive(true);
@@ -223,7 +226,7 @@ public class turnMgr : MonoBehaviour
         for (int i = 0; i < 11; i++)
         {
             //載入卡牌資訊
-            CardSObj aaa = Resources.Load<CardSObj>("Letter/" + i.ToString());
+            CardSObj aaa = Resources.Load<CardSObj>("CardID/" + i.ToString());
             if (aaa == null)
             {
                 break;
@@ -239,7 +242,7 @@ public class turnMgr : MonoBehaviour
         for (int i = 0; i < _deck.Count; i++)
         {
             //todo:幫每個卡牌安置對應的SObj
-            _deck[i].CardSobj = cardSObjs[GameDB.rand.Next(cardSObjs.Count)]; 
+            _deck[i].CardSobj = cardSObjs[GameDB.rand.Next(cardSObjs.Count)];
         }
         GameDB.LettersList = cardSObjs;
     }

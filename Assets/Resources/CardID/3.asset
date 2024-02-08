@@ -15,5 +15,6 @@ MonoBehaviour:
   Cardname: 3
   Description: "\u6B64\u70BA\u8086\u865F"
   Artwork: {fileID: 21300000, guid: 9369ac700f9e26c4f95f1f0e6d05e5c3, type: 3}
+  _cardAtk: 19
   _id: 4
   Used: 0

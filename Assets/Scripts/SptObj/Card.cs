@@ -16,8 +16,6 @@ public class Card : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDrag
     [Tooltip("sue")]
     [SerializeField] public GameObject nullimage;
     [SerializeField] public GameObject parents;
-    private float _tempx; //卡本身的位置
-    private float _tempy;
 
     [Header("Drag Following")]
     [SerializeField] private GameObject _canvas;
@@ -37,8 +35,8 @@ public class Card : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDrag
     {
         if (poolnull) //卡牌不是移至活動場地上的處理
         {
-            transform.position = Vector3.Lerp(new Vector3(_tempx, _tempy), transform.position, Time.deltaTime * 100f);
-            float Dis = Vector3.Distance(transform.position, new Vector3(_tempx, _tempy));
+            transform.position = Vector3.Lerp(transform.position, parents.transform.position, Time.deltaTime * 10f);
+            float Dis = Vector3.Distance(parents.transform.position, transform.position);
             if (Dis < 1f)
             {
                 poolnull = false;
@@ -57,11 +55,12 @@ public class Card : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDrag
 
         DescipText.text = CardSobj.Description;
     }
-
+    /// <summary>
+    /// 點下時
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerDown(PointerEventData eventData)
     {
-        _tempx = transform.position.x;
-        _tempy = transform.position.y;
 
         transform.localScale = Vector3.one;
         transform.SetParent(GameObject.Find("Canvas").transform);
@@ -76,13 +75,14 @@ public class Card : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDrag
     }
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta; //使物件跟隨符合滑鼠游標速度
+        //使物件跟隨符合滑鼠游標速度
+        _rectTransform.anchoredPosition += eventData.delta; 
         //__canvasGroup.alpha = .6f; //透明度
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-
-        if (eventData.pointerEnter == null) //判定是否為空場地
+        //判定是否為空場地
+        if (eventData.pointerEnter == null) 
         {
             poolnull = true;
             nullimage.SetActive(poolnull);
@@ -114,8 +114,6 @@ public class Card : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDrag
                 _canvasGroup.blocksRaycasts = true;
                 _canvasGroup.alpha = 1f;
             }
-
-            Debug.Log(eventData.pointerEnter);
         }
 
         transform.localEulerAngles = Vector3.zero;

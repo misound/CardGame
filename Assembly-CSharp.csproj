@@ -68,8 +68,8 @@
     <Compile Include="Assets\Scripts\SptObj\Card.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\turnMgr.cs" />
-    <Compile Include="Assets\Scripts\SptObj\fengpeitest.cs" />
     <Compile Include="Assets\Scripts\SptObj\CardObjBase.cs" />
+    <Compile Include="Assets\Scripts\SptObj\fengpeitest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
